@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees Structure - Techno Main Salt Lake</title>
+    <style>
+        /* Body Styles */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(192, 175, 211, 0.7);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: yellow;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            left: 0;
+            top: 100%;
+            padding: 10px;
+            opacity: 0;
+            border-radius: 6px;
+            z-index: 999;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateY(10px);
+        }
+
+        .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f4f4f4;
+        }
+
+        nav ul li:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-content {
+            top: 0;
+            left: 100%;
+            position: absolute;
+            display: none;
+        }
+
+        .dropdown-submenu:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        main h1 {
+            color: #6a0dad;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Fees Container */
+        .fees-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .fees-container h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .fees-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        .fees-table th, .fees-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .fees-table th {
+            background-color: #6a0dad;
+            color: white;
+        }
+
+        .fees-table td {
+            color: #555;
+        }
+
+        .fees-note {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* GIF Container */
+        .gif-container {
+            margin: 20px 0;
+        }
+
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div><img src="tmsl-logo.webp" alt="tmsl-logo" width="300" height="50"></div>
+            <ul>
+                <li><a href="minor_project.html">HOME</a></li>
+                <li>
+                    <a href="#">Academics</a>
+                    <div class="dropdown-content">
+                        <a href="acad_prog.html">Academic Program</a>
+                        <div class="dropdown-submenu">
+                            <a href="#">Departments</a>
+                            <div class="dropdown-content">
+                                <a href="cource1.html">Computer Science</a>
+                                <a href="cource2.html">CST - AI & ML</a>
+                                <a href="cource3.html">CSE - Cyber Security</a>
+                                <a href="cource4.html">CSE - IoT</a>
+                                <a href="cource5.html">Civil Engineering</a>
+                                <a href="cource6.html">Electrical engineering </a>
+                                <a href="cource7.html">Mechanical Engineering</a>
+                            </div>
+                        </div>
+                        <a href="Celender-2023.pdf">Academics Celender</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#admission">Admission</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">login</a>
+                        <a href="intrance.html">Entrance Exams</a>
+                        <a href="eligible.html">Eligibility Criteria</a>
+                        <a href="fee.html">Fees Structure</a>
+                    </div>
+                </li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="login.html">students Login</a></li>
+                <li><a href="#contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Fees Structure</h1>
+        <div class="fees-container">
+            <h2>Program Fees for 2025-2026</h2>
+            <table class="fees-table">
+                <tr>
+                    <th>Program</th>
+                    <th>Tuition Fee (Per Semester)</th>
+                    <th>Other Fees (One-Time)</th>
+                    <th>Total First Year (Approx.)</th>
+                </tr>
+                <tr>
+                    <td>B.Tech (Computer Science, Civil, Electrical, Mechanical, etc.)</td>
+                    <td>INR 75,000</td>
+                    <td>INR 25,000 (Admission, Library, etc.)</td>
+                    <td>INR 175,000</td>
+                </tr>
+                <tr>
+                    <td>B.Tech (CST - AI & ML, CSE - Cyber Security, CSE - IoT)</td>
+                    <td>INR 80,000</td>
+                    <td>INR 25,000</td>
+                    <td>INR 185,000</td>
+                </tr>
+                <tr>
+                    <td>M.Tech</td>
+                    <td>INR 60,000</td>
+                    <td>INR 20,000</td>
+                    <td>INR 140,000</td>
+                </tr>
+                <tr>
+                    <td>MBA</td>
+                    <td>INR 90,000</td>
+                    <td>INR 30,000</td>
+                    <td>INR 210,000</td>
+                </tr>
+                <tr>
+                    <td>MCA</td>
+                    <td>INR 65,000</td>
+                    <td>INR 20,000</td>
+                    <td>INR 150,000</td>
+                </tr>
+            </table>
+            <p class="fees-note">Note: Fees are indicative and subject to change. Additional charges (hostel, examination, etc.) may apply. Contact the admission office for the latest fee details.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© TECHNO MAIN SALT LAKE</p>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.top = '-100px';
+            } else {
+                header.style.top = '0';
+            }
+        });
+    </script>
+</body>
+</html>

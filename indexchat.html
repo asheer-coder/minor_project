@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institute Chatbot</title>
+  <style>
+    html, body {
+     margin: 0;
+     padding: 0;
+     height: 100%; /* Important! */
+    }
+    #instituteChaticon {
+      position: fixed;
+      bottom: 0px;
+      right: 0px; /* Adjusted to avoid overlapping with existing chatbot */
+      background-color: #28a745;
+      color: white;
+      font-size: 24px;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .institute-chat-container {
+      display: none;
+      position: fixed;
+      bottom: 50px;
+      right: 0px;
+      /* width: 300px; */
+      background-color: #60c8b3;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .institute-chat-box {
+      background: white;
+      border: 1px solid #ccc;
+      height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    .institute-input-area {
+      display: flex;
+      gap: 5px;
+    }
+    .institute-input-area input {
+      flex: 1;
+      padding: 5px;
+    }
+    .institute-input-area button {
+      padding: 5px 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .institute-question-buttons {
+      margin-bottom: 10px;
+    }
+    .institute-question-buttons button {
+      display: block;
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0;
+      background: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="instituteChaticon" onclick="instituteToggleChat()">💬</div>
+  <div class="institute-chat-container" id="instituteChatContainer">
+    <div class="institute-question-buttons" id="instituteQuestionButtons"></div>
+    <div class="institute-chat-box" id="instituteChatBox">
+      <p><strong>TMSL: </strong>     <img src="https://img.icons8.com/ios-filled/20/chat.png" style="vertical-align:middle;"> Hello there! 👋👋<br> 😎How can I help you today? </p>
+      <p><strong>TMSL: </strong>chat only for institute purpose 🧑‍🏫👩‍🏫 </p>
+    </div>
+    <div class="institute-input-area">
+      <input type="text" id="instituteUserInput" placeholder="Ask something..." />
+      <button onclick="instituteHandleInput()">Send</button>
+    </div>
+  </div>
+  
+
+  <script>
+    const instituteQuestions = [
+      "What are the courses?",
+      "Where should I login for student?",
+      "Where should I login for faculty?",
+      "What streams are available?"
+    ];
+    const instituteAnswers = {
+      "courses": "We offer:<br>- B.Tech<br>- BBA<br>- BCA<br>- MBA<br>- MCA<br>and many more programs.",
+      "student login": "Students can login at:<br>https://institute.edu/student-login",
+      "faculty login": "Faculty members can login at:<br>https://institute.edu/faculty-login",
+      "departments": "we have :<br>- Department of computer science and Technology <br>- Department of Civil Engineering <br>- Department of Mechanical Engineer ",
+      "streams": "Streams include:<br>- Computer Science<br>- Electronics<br>- Mechanical<br>- Civil<br>- Management."
+    };
+
+    const instituteChatBox = document.getElementById("instituteChatBox");
+    const instituteQuestionButtons = document.getElementById("instituteQuestionButtons");
+
+    instituteQuestions.forEach(q => {
+      const btn = document.createElement("button");
+      btn.textContent = q;
+      btn.onclick = () => instituteRespond(q);
+      instituteQuestionButtons.appendChild(btn);
+    });
+
+    function instituteRespond(input) {
+      instituteChatBox.innerHTML += `<p><strong>USER: </strong> ${input}</p>`;
+      const inputLower = input.toLowerCase();
+      let response = "Sorry, I didn't understand that.";
+      if (inputLower.includes("course")) response = instituteAnswers["courses"];
+      else if (inputLower.includes("department")) response = instituteAnswers["departments"];
+      else if (inputLower.includes("student login")) response = instituteAnswers["student login"];
+      else if (inputLower.includes("faculty login")) response = instituteAnswers["faculty login"];
+      else if (inputLower.includes("stream")) response = instituteAnswers["streams"];
+      instituteChatBox.innerHTML += `<p><strong>TMSL: </strong> ${response}</p>`;
+      instituteChatBox.scrollTop = instituteChatBox.scrollHeight;
+    }
+
+    function instituteHandleInput() {
+      const userInput = document.getElementById("instituteUserInput").value;
+      if (userInput.trim() !== "") {
+        instituteRespond(userInput);
+        document.getElementById("instituteUserInput").value = "";
+      }
+    }
+
+    document.getElementById("instituteUserInput").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        instituteHandleInput();
+      }
+    });
+
+    function instituteToggleChat() {
+      const chat = document.getElementById("instituteChatContainer");
+      chat.style.display = (chat.style.display === "none") ? "block" : "none";
+    }
+  </script>
+</body>
+</html>

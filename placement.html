@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Placement Partners | Techno India</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f8;
+      color: #333;
+    }
+
+     /* Header Styles */
+        header {
+            background: rgba(192, 175, 211, 0.7);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blu(10px);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+    
+    footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            color: #ffffff; /* Text color remains white for readability */
+            width: 100%;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #1a1a1a;
+    }
+
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .company-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .company-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .company-logo {
+      max-width: 100px;
+      max-height: 60px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .criteria {
+      text-align: left;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+            <div><img src="tmsl-logo.webp" alt="tmsl-logo" width="300" height="50"></div>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li>
+                    <a href="#">Academics</a>
+                    <div class="dropdown-content">
+                        <a href="acad_prog.html">Academic Program</a>
+                        <div class="dropdown-submenu">
+                            <a href="#" class="submenu-trigger">Departments</a>
+                            <div class="dropdown-content submenu-content">
+                                <a href="cource1.html">Computer Science</a>
+                                <a href="cource2.html">CST - AI & ML</a>
+                                <a href="cource3.html">CSE - Cyber Security</a>
+                                <a href="cource4.html">CSE - IoT</a>
+                                <a href="cource5.html">Civil Engineering</a>
+                                <a href="cource6.html">Electrical Engineering</a>
+                                <a href="cource7.html">Mechanical Engineering</a>
+                            </div>
+                        </div>
+                        <a href="Celender-2023.pdf">Academics Calendar</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#admission">Admission</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">login</a>
+                        <a href="intrance.html">Entrance Exams</a> <!-- Change this line -->
+                        <a href="eligible.html">Eligible for exam</a>
+                        <a href="fee.html">Fee's Structure</a>
+                    </div>
+                </li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="login.html">students Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+  </header>
+
+  <main>
+  <h1>Our Top Recruiters</h1>
+    <div class="company-grid">
+        
+      <div class="company-card">
+        <img src="https://th.bing.com/th/id/OIP.MZU5mDFjU3VNait0JhD00gHaCC?cb=iwc1&w=1883&h=520&rs=1&pid=ImgDetMain" class="company-logo" alt="TCS" />
+        <div class="criteria">
+          <strong>Eligibility:</strong><br>
+          - Min 6.0 CGPA<br>
+          - No active backlogs<br>
+          - Good communication skills
+        </div>
+      </div>
+
+      <div class="company-card">
+        <img src="https://th.bing.com/th/id/OIP.Gb4xi3k-tu1DaNbtFzui_wHaHa?rs=1&pid=ImgDetMain" class="company-logo" alt="Infosys" />
+        <div class="criteria">
+          <strong>Eligibility:</strong><br>
+          - 60%+ in 10th, 12th, UG<br>
+          - No backlogs<br>
+          - Aptitude and coding test
+        </div>
+      </div>
+
+      <div class="company-card">
+        <img src="https://1000logos.net/wp-content/uploads/2021/05/Wipro-logo.png" class="company-logo" alt="Wipro" />
+        <div class="criteria">
+          <strong>Eligibility:</strong><br>
+          - 60% and above in academics<br>
+          - No arrears<br>
+          - Written + Technical + HR rounds
+        </div>
+      </div>
+
+      <div class="company-card">
+        <img src="https://logos-world.net/wp-content/uploads/2020/06/Accenture-Symbol.png" class="company-logo" alt="Accenture" />
+        <div class="criteria">
+          <strong>Eligibility:</strong><br>
+          - 65%+ in academics<br>
+          - Fluent in English<br>
+          - Coding & communication rounds
+        </div>
+      </div>
+
+      <div class="company-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="company-logo" alt="IBM" />
+        <div class="criteria">
+          <strong>Eligibility:</strong><br>
+          - Min 6 CGPA<br>
+          - Strong analytical skills<br>
+          - Good coding background
+        </div>
+      </div>
+
+      <div class="company-card">
+        <img src="https://th.bing.com/th/id/OIP.q147_8-0-KUzdNrCSjVNvQHaHa?rs=1&pid=ImgDetMain" class="company-logo" alt="Cognizant" />
+        <div class="criteria">
+          <strong>Eligibility:</strong><br>
+          - Min 60% from X to UG<br>
+          - No standing arrears<br>
+          - Good logical reasoning
+        </div>
+      </div>
+
+      <div class="company-card">
+        <img src="https://www.masscue.org/wp-content/uploads/2021/08/Microsoft-Horizontal.jpg" class="company-logo" alt="Microsoft" />
+        <div class="criteria">
+          <strong>Eligibility:</strong><br>
+          - CGPA 8.0+<br>
+          - Excellent coding skills<br>
+          - Competitive programming experience
+        </div>
+      </div>
+
+      <div class="company-card">
+        <img src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png" class="company-logo" alt="Google" />
+        <div class="criteria">
+          <strong>Eligibility:</strong><br>
+          - CGPA 8.5+<br>
+          - Advanced algorithms/data structures<br>
+          - Problem-solving excellence
+        </div>
+      </div>
+<h1 style="margin-top: 4rem;">Top Placement Takers</h1>
+<div class="company-grid">
+  <div class="company-card">
+    <img src="https://ananyasen.web.illinois.edu/wp-content/uploads/2022/04/HGSA-056-scaled-e1650638100390-780x905.jpg" class="company-logo" alt="Topper 1" />
+    <div class="criteria">
+      <strong>Name:</strong> Ananya Sen<br>
+      <strong>Department:</strong> Computer Science Engineering<br>
+      <strong>Company:</strong> Google<br>
+      <strong>Package:</strong> 45 LPA
+    </div>
+  </div>
+
+  <div class="company-card">
+    <img src="https://tse3.mm.bing.net/th?id=OIP.WPezyy7KhNSkmevYZwgwmwAAAA&pid=Api&P=0&h=180" class="company-logo" alt="Topper 2" />
+    <div class="criteria">
+      <strong>Name:</strong> Ravi Sharma<br>
+      <strong>Department:</strong> Information Technology<br>
+      <strong>Company:</strong> Microsoft<br>
+      <strong>Package:</strong> 40 LPA
+    </div>
+  </div>
+
+  <div class="company-card">
+    <img src="https://hscrb.harvard.edu/wp-content/uploads/2020/11/Sneha-Dutta-409x450.png" class="company-logo" alt="Topper 3" />
+    <div class="criteria">
+      <strong>Name:</strong> Sneha Dutta<br>
+      <strong>Department:</strong> Electronics & Communication Engineering<br>
+      <strong>Company:</strong> Amazon<br>
+      <strong>Package:</strong> 36 LPA
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Techno India Main Salt Lake | Placement Cell</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELECTRICAL ENGINEERING</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding-top: 110px; /* Push content below fixed navbar */
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .header img {
+            max-width: 100%;
+            height: auto;
+        }
+        .intro-section {
+            padding: 40px 20px;
+            background: #ffffff;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .intro-section h2 {
+            color: #3a9497;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .intro-section p {
+            color: #013f35;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .nav-bar {
+            background-color: #9290fa;
+            overflow: hidden;
+        }
+        .nav-bar a {
+            float: left;
+            display: block;
+            color: rgb(135, 38, 38);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .nav-bar a:hover {
+            background-color: #ddd;
+            color: rgb(115, 35, 35);
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 17px;
+            border: none;
+            outline: none;
+            color: rgb(30, 27, 27);
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            cursor: pointer;
+        }
+        .dropdown-submenu {
+        position: relative;
+        display:block
+    }
+    
+    .dropdown-submenu .submenu-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(105, 95, 95, 0.2);
+    padding: 10px;
+    border-radius: 6px;
+    z-index: 1000; /* Higher z-index for sub-menu */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateX(10px);
+}
+    
+    .dropdown-submenu:hover > .dropdown-content {
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+    }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: rgb(74, 52, 52);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #de5e5e;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #ddd;
+            color: rgb(198, 40, 40);
+        }
+        .content-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            display: none; /* Hidden by default */
+        }
+        .content-section.active {
+            display: block; /* Shown when active */
+        }
+        .content-section h1 {
+            color: #362828;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .content-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .content-section th, .content-section td {
+            border: 1px solid #2a1e1e;
+            padding: 8px;
+            text-align: left;
+        }
+        .content-section th {
+            background-color: #f2f2f2;
+        }
+        .content-section p {
+            color: #975858;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            color: #ffffff; /* Text color remains white for readability */
+            width: 100%;
+        }
+        /* Styles for the new nav bar */
+        nav {
+            background-color: rgba(157, 125, 201, 0.5); /* Semi-transparent version of #9d7dc9 */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed; /* Fix navbar at the top */
+            top: 0; /* Align to top */
+            left: 0; /* Align to left */
+            width: 100%; /* Full width */
+            z-index: 1000; /* Keep navbar on top */
+            transition: transform 0.3s ease; /* Smooth transition for hide/show */
+        }
+        nav.hidden {
+            transform: translateY(-100%); /* Slide up to hide */
+        }
+        nav img {
+            vertical-align: middle;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            padding: 14px 16px;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        nav ul li .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+        nav ul li .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        nav ul li .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        nav ul li:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div><img src="tmsl-logo.webp" alt="tmsl-logo" width="300" height="50"></div>
+            <ul>
+                <li><a href="minor_project.html">HOME</a></li>
+                <li>
+                    <a href="#">Academics</a>
+                    <div class="dropdown-content">
+                        <a href="acad_prog.html">Academic Program</a>
+                        <div class="dropdown-submenu">
+                            <a href="#" class="submenu-trigger">Departments</a>
+                            <div class="dropdown-content submenu-content">
+                                <a href="cource1.html">Computer Science</a>
+                                <a href="cource2.html">CST - AI & ML</a>
+                                <a href="cource3.html">CSE - Cyber Security</a>
+                                <a href="cource4.html">CSE - IoT</a>
+                                <a href="cource5.html">Civil Engineering</a>
+                                <a href="cource6.html">Electrical Engineering</a>
+                                <a href="cource7.html">Mechanical Engineering</a>
+                            </div>
+                        </div>
+                        <a href="Celender-2023.pdf">Academics Calendar</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#admission">Admission</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">login</a>
+                        <a href="intrance.html">Entrance Exams</a> <!-- Change this line -->
+                        <a href="eligible.html">Eligible for exam</a>
+                        <a href="fee.html">Fee's Structure</a>
+                    </div>
+                </li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="login.html">students Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="header">
+        <img src="electrical.jpg" alt="Image of TMST" style="width:100%; height:0%;">
+    </div>
+
+    <div class="nav-bar">
+        <div class="dropdown">
+            <button class="dropbtn">About us</button>
+            <div class="dropdown-content">
+                <a href="#program_objectives" onclick="showSection('program_objectives')">Program Objectives</a>
+                <a href="#program_outcomes" onclick="showSection('program_outcomes')">Program Outcomes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Syllabus</button>
+            <div class="dropdown-content">
+                <a href="syllabus.jpg">Syllabus</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Laboratories</button>
+            <div class="dropdown-content">
+                <a href="#laboratories" onclick="showSection('laboratories')">View All Laboratories</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="intro-section">
+        <h2>ELECTRICAL ENGINEERING</h2>
+        <p>The Department of Electrical Engineering at Techno Main Salt Lake provides a dynamic and innovative education
+            for students interested in pursuing a career in electrical engineering. Our program is designed to equip
+            students with a strong foundation in the field, providing them with the knowledge and skills necessary to
+            succeed in a variety of industries. Our faculty members are renowned experts in their respective fields,
+            with extensive experience in both academia and industry. We offer a range of courses covering topics such as
+            electronics, power systems, control systems, and communications. Our state-of-the-art laboratories and
+            facilities provide students with hands-on experience, allowing them to apply their theoretical knowledge to
+            practical scenarios. At the Department of Electrical Engineering, we are committed to producing graduates
+            who are well-prepared to meet the challenges of the ever-evolving field of electrical engineering. Whether
+            you are a prospective student, a current student, or an industry professional, we invite you to explore our
+            program and discover the possibilities that await you.</p>
+        <img src="Screenshot 2025-05-02 160852.png" alt="">
+    </div>
+
+    <main>
+        <div class="content-section" id="program_objectives">
+            <h1>Program Objectives</h1>
+            <p>1. To excel as successful career professionals in various fields of Computer Science and Engineering and
+                to pursue research.</p>
+            <p>2. To establish expertise in solving contemporary problems in analysis, design, and evaluation of
+                computer and software systems.</p>
+            <p>3. To engage in lifelong learning and professional development to adapt to rapidly changing work
+                environment.</p>
+            <p>4. To demonstrate entrepreneurial skills, lead teams built across multidisciplinary and cross-cultural
+                backgrounds, and to make fruitful contributions towards overall societal development.</p>
+        </div>
+
+        <div class="content-section" id="program_outcomes">
+            <h1>Program Outcomes</h1>
+            <p>1. Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and
+                engineering specialization to the solution of complex engineering problems.</p>
+            <p>2. Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems
+                reaching substantiated conclusions using first principles of mathematics, natural sciences, and
+                engineering sciences.</p>
+            <p>3. Design/development of solutions: Design solutions for complex engineering problems and design system
+                components or processes that meet the specified needs with appropriate consideration for the public
+                health and safety, and the cultural, societal, and environmental considerations.</p>
+            <p>4. Conduct investigations of complex problems: Use research-based knowledge and research methods
+                including design of experiments, analysis and interpretation of data, and synthesis of the information
+                to provide valid conclusions.</p>
+            <p>5. Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering
+                tools including prediction and modeling to complex engineering activities with an understanding of the
+                limitations.</p>
+            <p>6. The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal,
+                health, safety, legal, and cultural issues and the consequent responsibilities relevant to the
+                professional engineering practice.</p>
+            <p>7. Environment and sustainability: Understand the impact of the professional engineering solutions in
+                societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable
+                development.</p>
+            <p>8. Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of
+                the engineering practice.</p>
+            <p>9. Individual and team work: Function effectively as an individual, and as a member or leader in diverse
+                teams, and in multidisciplinary settings.</p>
+            <p>10. Communication: Communicate effectively on complex engineering activities with the engineering
+                community and with society at large, such as being able to comprehend and write effective reports and
+                design documentation, make effective presentations, and give and receive clear instructions.</p>
+            <p>11. Project management and finance: Demonstrate knowledge and understanding of the engineering and
+                management principles and apply these to one’s own work, as a member and leader in a team, to manage
+                projects and in multidisciplinary environments.</p>
+            <p>12. Life-long learning: Recognize the need for, and have the preparation and ability to engage in
+                independent and life-long learning in the broadest context of technological change.</p>
+        </div>
+
+        <!-- Updated Laboratories Section with Table -->
+        <div class="content-section" id="laboratories">
+            <h1>Laboratories</h1>
+            <table>
+                <tr>
+                    <th>Physics & Chemistry Labs</th>
+                    <th>Biological and Analytical Techniques Lab</th>
+                    <th>Computer Science Labs</th>
+                </tr>
+                <tr>
+                    <td>Applied and Adaptive Optics Lab</td>
+                    <td>Material Characterization Lab</td>
+                    <td>Data Structure Using C Lab</td>
+                </tr>
+                <tr>
+                    <td>Atomic and Molecular Physics Lab</td>
+                    <td>Statistical Mechanics & Electromagnet. Theory Lab</td>
+                    <td>Statistics using MAT Lab</td>
+                </tr>
+                <tr>
+                    <td>Computational Physics Lab</td>
+                    <td>Biochemistry and Analytical Techniques Lab</td>
+                    <td>Micro Programming & Architecture Lab</td>
+                </tr>
+                <tr>
+                    <td>General Physics Lab</td>
+                    <td>Microbiology Lab</td>
+                    <td>Programming Lab</td>
+                </tr>
+                <tr>
+                    <td>Modern Physics Lab</td>
+                    <td>Genetic Engineering Lab</td>
+                    <td>Business Presentation and Language Lab</td>
+                </tr>
+                <tr>
+                    <td>Optics Lab</td>
+                    <td>Immunology Lab</td>
+                    <td>Object-Oriented Programming Lab</td>
+                </tr>
+                <tr>
+                    <td>Solid State Physics Lab</td>
+                    <td>Bioinformatics Lab</td>
+                    <td>Unix Lab</td>
+                </tr>
+                <tr>
+                    <td>Solid State Technology Lab</td>
+                    <td>Bioreactor Operations Lab</td>
+                    <td>Graphics & Multimedia Lab</td>
+                </tr>
+                <tr>
+                    <td>General Chemistry Lab</td>
+                    <td>Food and Environmental Biotechnology Lab</td>
+                    <td>Basic Computer Application Lab</td>
+                </tr>
+                <tr>
+                    <td>Organic Chemistry Lab</td>
+                    <td>Molecular Biology Lab</td>
+                    <td>Electronic Media: Planning & Production Lab</td>
+                </tr>
+                <tr>
+                    <td>Inorganic Chemistry Lab</td>
+                    <td>Basic Microscopy & Instrumentation Lab</td>
+                    <td>Electronic Media: Writing, Editing & Execution Lab</td>
+                </tr>
+                <tr>
+                    <td>Polymer Processing Lab</td>
+                    <td>Cytogenetic Techniques Lab</td>
+                    <td>Press Photography Lab</td>
+                </tr>
+                <tr>
+                    <td>Polymer Technology Lab</td>
+                    <td>Tissue Culture Techniques Lab</td>
+                    <td>Film & Television: Theory & Practice Lab</td>
+                </tr>
+                <tr>
+                    <td>Chemical Engineering Lab</td>
+                    <td>Numerical Methods Lab</td>
+                    <td>Design & Page Make Up Lab</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <div class="footer">
+        <p>Computer Science and Engineering | TMST</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Scroll-based navbar hide/show
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                nav.classList.add('hidden');
+            } else {
+                // Scrolling up
+                nav.classList.remove('hidden');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll
+        });
+    </script>
+</body>
+
+</html>

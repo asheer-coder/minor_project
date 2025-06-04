@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNO MAIN SALAT LAKE - Seat Availability</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .back-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TECHNO MAIN SALTLAKE</h1>
+
+        <h2>Available Seats</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Total Seats</th>
+                    <th>Available Seats</th>
+                </tr>
+            </thead>
+            <tbody id="seatsTable">
+                <!-- Seats data will be populated here -->
+            </tbody>
+        </table>
+
+        <button class="back-btn" onclick="window.location.href='index.html'">Back to Form</button>
+    </div>
+
+    <script>
+        // Sample seats data (can be replaced with dynamic data from a server)
+        const seatsData = [
+            { course: "Computer Science Engineering", total: 60, available: 20 },
+            { course: "Computer Science Engineering - AI & ML", total: 70, available: 23 },
+            { course: "Computer Science Engineering - CYBER SECURITY", total: 80, available: 53 },
+            { course: "Computer Science Engineering - IoT", total: 40, available: 15 },
+            { course: "Civil Engineering", total: 30, available: 8 },
+            { course: "Mechanical Engineering", total: 50, available: 27 },
+            { course: "Electrical Engineering", total: 40, available: 6 }
+        ];
+
+        // Populate seats table
+        function populateSeatsTable() {
+            const tableBody = document.getElementById('seatsTable');
+            tableBody.innerHTML = '';
+            seatsData.forEach(seat => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${seat.course}</td>
+                    <td>${seat.total}</td>
+                    <td>${seat.available}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Populate seats table on page load
+        window.onload = populateSeatsTable;
+    </script>
+</body>
+</html>

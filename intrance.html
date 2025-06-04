@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrance Exams - Techno Main Salt Lake</title>
+    <style>
+        /* Body Styles */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #f4f4f4;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(192, 175, 211, 0.7);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: yellow;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            left: 0;
+            top: 100%;
+            padding: 10px;
+            opacity: 0;
+            border-radius: 6px;
+            z-index: 999;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateY(10px);
+        }
+
+        nav ul li:hover > .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Submenu (Departments) */
+        .dropdown-submenu {
+            position: relative;
+            display: block;
+        }
+
+        .dropdown-submenu .submenu-content {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 6px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateX(10px);
+        }
+
+        .dropdown-submenu:hover > .submenu-content {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Style links in dropdown and submenu */
+        .dropdown-content a,
+        .submenu-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-content a:hover,
+        .submenu-content a:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Submenu trigger link */
+        .submenu-trigger {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .submenu-trigger:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            min-height: calc(100vh - 180px);
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        main h1 {
+            color: #6a0dad;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraph Styles */
+        .exam-info {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .exam-info p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        /* Exams Container */
+        .exams-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        .exam-table th, .exam-table td {
+            padding: 12px;
+            text-align: center;
+            border: 2px solid #333;
+        }
+
+        .exam-table a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        .exam-table a:hover {
+            text-decoration: underline;
+        }
+
+        /* GIF Container */
+        .gif-container {
+            margin: 20px 0;
+        }
+
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #494949;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 45px;
+            box-sizing: border-box;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .exam-table th, .exam-table td {
+                padding: 8px;
+                border: 2px solid #333;
+            }
+
+            main {
+                padding-top: 100px;
+                padding-bottom: 50px;
+                min-height: calc(100vh - 150px);
+            }
+
+            footer {
+                padding: 10px;
+                height: 40px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div><img src="tmsl-logo.webp" alt="tmsl-logo" width="300" height="50"></div>
+            <ul>
+                <li><a href="minor_project.html">HOME</a></li>
+                <li>
+                    <a href="#">Academics</a>
+                    <div class="dropdown-content">
+                        <a href="acad_prog.html">Academic Program</a>
+                        <div class="dropdown-submenu">
+                            <a href="#" class="submenu-trigger">Departments</a>
+                            <div class="dropdown-content submenu-content">
+                                <a href="cource1.html">Computer Science</a>
+                                <a href="cource2.html">CST - AI & ML</a>
+                                <a href="cource3.html">CSE - Cyber Security</a>
+                                <a href="cource4.html">CSE - IoT</a>
+                                <a href="cource5.html">Civil Engineering</a>
+                                <a href="cource6.html">Electrical Engineering</a>
+                                <a href="cource7.html">Mechanical Engineering</a>
+                            </div>
+                        </div>
+                        <a href="Celender-2023.pdf">Academics Calendar</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#admission">Admission</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">login</a>
+                        <a href="intrance.html">Entrance Exams</a>
+                        <a href="eligible.html">Eligible for exam</a>
+                        <a href="fee.html">Fees Structure</a>
+                    </div>
+                </li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="login.html">students Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Entrance Examinations</h1>
+        <div class="exam-info">
+            <p>Techno Main Salt Lake offers admission to its prestigious undergraduate and postgraduate programs through various national and state-level entrance examinations. These exams assess candidates' aptitude, technical knowledge, and readiness for professional courses in engineering, management, and computer applications.</p>
+            <p>The <strong>WBJEE</strong> (West Bengal Joint Entrance Examination) is the primary gateway for admission to undergraduate engineering programs at Techno Main Salt Lake. It tests candidates in Physics, Chemistry, and Mathematics, ensuring a strong foundation for engineering studies.</p>
+            <p><strong>JEE Main</strong>, conducted by the National Testing Agency, is another pathway for B.Tech admissions. It is a highly competitive exam that evaluates students' proficiency in science and mathematics, offering opportunities to join top-tier institutions like ours.</p>
+            <p>For lateral entry into the second year of B.Tech programs, <strong>JELET</strong> (Joint Entrance for Lateral Entry) is required. This exam is designed for diploma holders seeking to advance their engineering education.</p>
+            <p>Postgraduate aspirants can pursue M.Tech programs through <strong>GATE</strong> (Graduate Aptitude Test in Engineering), which tests comprehensive technical knowledge and is widely recognized for its rigor.</p>
+            <p>For MBA admissions, the <strong>CAT</strong> (Common Admission Test) is accepted, evaluating candidates' quantitative, verbal, and analytical skills, preparing them for leadership roles in business.</p>
+            <p><strong>JECA</strong> (Joint Entrance for Computer Applications) is the key to our MCA program, focusing on mathematical and computer science aptitude, ideal for students aiming for careers in IT.</p>
+        </div>
+        <div class="exams-container">
+            <table class="exam-table">
+                <tr>
+                    <th><a href="https://wbjeeb.nic.in/" target="_blank">WBJEE</a></th>
+                    <td><a href="https://jeemain.nta.nic.in/" target="_blank">JEE MAIN</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://wbjeeb.nic.in/jelet/" target="_blank">JELET</a></td>
+                    <td><a href="https://gate.iitm.ac.in/" target="_blank">GATE</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://iimcat.ac.in/" target="_blank">CAT</a></td>
+                    <td><a href="https://wbjeeb.nic.in/jeca/" target="_blank">JECA</a></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>© TECHNO MAIN SALT LAKE</p>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.top = '-100px';
+            } else {
+                header.style.top = '0';
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93a13aca983253c7',t:'MTc0NjI5MDczNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

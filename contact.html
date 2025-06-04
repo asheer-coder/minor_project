@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Techno India</title>
+    <link rel="stylesheet" href="minor_project.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex-grow: 1;
+            padding: 40px;
+            background-color: #f9f9f9;
+            margin-top: 80px;
+        }
+        h2 {
+            color: #6a0dad; /* Changed to purple */
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #6a0dad; /* Changed to purple */
+            color: white;
+            font-size: 18px;
+        }
+        .map-container {
+            margin-top: 40px;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.7); /* Transparent black */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- Added Navigation Bar -->
+    <header>
+        <nav>
+            <div><img src="tmsl-logo.webp" alt="tmsl-logo" width="300" height="50"></div>
+            <ul>
+                <li><a href="minor_project.html">HOME</a></li>
+                <li><a href="#">Academics</a>
+                    <div class="dropdown-content">
+                        <a href="acad_prog.html">Academic Program</a>
+                        <div class="dropdown-submenu">
+                            <a href="#">Departments</a>
+                            <div class="dropdown-content">
+                                <a href="cource1.html">Computer Science</a>
+                                <a href="cource2.html">CST - AI & ML</a>
+                                <a href="cource3.html">CSE - Cyber Security</a>
+                                <a href="cource4.html">CSE - IoT</a>
+                                <a href="cource5.html">Civil Engineering</a>
+                                <a href="cource6.html">Electrical engineering </a>
+                                <a href="cource7.html">Mechanical Engineering</a>
+                            </div>
+                        </div>
+                        <a href="Celender-2023.pdf">Academics Calendar</a>
+                    </div>
+                </li>
+                <li><a href="#admission">Admission</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">login</a>
+                        <a href="intrance.html">Entrance Exams</a>
+                        <a href="eligible.html">Eligible for exam</a>
+                        <a href="fee.html">Fee's Structure</a>
+                    </div>
+                </li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="login.html">students Login</a></li>
+                <li><a href="contact.html">Contact page</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
+    <h2>Contact Departments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Department Name</th>
+                <th>Office Contact Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Admission Office</td>
+                <td>+91 91111 22334</td>
+            </tr>
+            <tr>
+                <td>Computer Science & Engineering</td>
+                <td>+91 98765 43210</td>
+            </tr>
+            <tr>
+                <td>CST - AI & ML</td>
+                <td>+91 98765 11223</td>
+            </tr>
+            <tr>
+                <td>CSE - Cyber Security</td>
+                <td>+91 98765 44556</td>
+            </tr>
+            <tr>
+                <td>CSE - IoT</td>
+                <td>+91 98765 77889</td>
+            </tr>
+            <tr>
+                <td>Civil Engineering</td>
+                <td>+91 97878 53245</td>
+            </tr>
+            <tr>
+                <td>Electrical Engineering</td>
+                <td>+91 98700 45321</td>
+            </tr>
+            <tr>
+                <td>Mechanical Engineering</td>
+                <td>+91 98700 65432</td>
+            </tr>
+            <tr>
+                <td>Electronics & Communication</td>
+                <td>+91 98333 12345</td>
+            </tr>
+            <tr>
+                <td>Information Technology</td>
+                <td>+91 98399 55665</td>
+            </tr>
+            <tr>
+                <td>Management Studies</td>
+                <td>+91 98878 12321</td>
+            </tr>
+            <tr>
+                <td>Applied Sciences</td>
+                <td>+91 97777 88990</td>
+            </tr>
+            <!-- Other table rows remain same -->
+        </tbody>
+    </table>
+
+    <div class="map-container">
+        <h2>Our Campus Location</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.078273289574!2d88.42445437463022!3d22.57617563284051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02751a9d9c9e85%3A0x7fe665c781b10383!2sTechno%20Main%20Salt%20Lake!5e0!3m2!1sen!2sin!4v1745765006317!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</main>
+
+<footer>
+    &copy; 2025 Techno India | All Rights Reserved
+</footer>
+
+</body>
+</html>

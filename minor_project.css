@@ -1,0 +1,593 @@
+/* Combined CSS for Techno Main Salt Lake */
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: rgba(192, 175, 211, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(88, 84, 84, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: yellow;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(105, 95, 95, 0.2);
+    left: 0;
+    top: 100%;
+    padding: 10px;
+    opacity: 0;
+    border-radius: 6px;
+    z-index: 999;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(10px);
+}
+
+nav ul li:hover > .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Submenu (Departments) */
+.dropdown-submenu {
+    position: relative;
+    display: block; /* Ensure the submenu container takes up space */
+}
+
+.dropdown-submenu .submenu-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(105, 95, 95, 0.2);
+    padding: 10px;
+    border-radius: 6px;
+    z-index: 1000; /* Higher z-index for sub-menu */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateX(10px);
+}
+
+.dropdown-submenu:hover > .submenu-content {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Style links in dropdown and submenu */
+.dropdown-content a,
+.submenu-content a {
+    color: rgb(24, 23, 23);
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content a:hover,
+.submenu-content a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Submenu trigger link */
+.submenu-trigger {
+    color: rgb(24, 23, 23);
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.submenu-trigger:hover {
+    background-color: #f4f4f4;
+}
+/* Main Content Styles */
+main {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+
+/* Image Slider Styles */
+.wrapper {
+    width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 600vw;
+    height: 100vh;
+    transition: transform 0.8s ease;
+}
+
+.page {
+    flex: 0 0 100vw;
+    height: 100vh;
+}
+
+.page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Three Column Section */
+#info-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-column {
+    flex: 1;
+    min-width: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-column h2 {
+    color: #6a0dad;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Video Container */
+.video-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    border-radius: 6px;
+}
+
+/* News Container */
+.news-container {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.news-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 6px;
+}
+
+.news-item.new {
+    background: #e8ffe8;
+    animation: blink 1s infinite;
+}
+
+.new-label {
+    font-weight: bold;
+    color: #d35400;
+}
+
+/* Exams Container */
+.exams-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.exam-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.exam-table th, .exam-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.exam-table a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+}
+
+.exam-table a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #494949;
+    color: rgb(253, 252, 252);
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Approval Section Styles */
+.approvals-overlay {
+    position: relative;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.approvals-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.approvals-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.approvals-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sticker-container {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 10;
+}
+
+.sticker {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    transform: rotate(15deg);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+}
+
+.sticker-1 {
+    top: 20px;
+    right: 20px;
+    background-color: #4ecdc4;
+}
+
+.sticker-2 {
+    top: 80px;
+    right: -10px;
+    background-color: #ffbe0b;
+    transform: rotate(-10deg);
+}
+
+.sticker-3 {
+    top: 150px;
+    right: 30px;
+    background-color: #8338ec;
+    color: white;
+    transform: rotate(5deg);
+}
+
+.content-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.content-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #4ecdc4, #8338ec, #ffbe0b);
+}
+
+.content-box h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.content-box h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4ecdc4, #8338ec);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+.approval-badge {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.approval-badge img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.description {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Study Section Styles */
+#Departments {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#Departments h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-block {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-block h3 {
+    font-size: 1.4em;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.course-block p {
+    font-size: 0.9em;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.course-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 0;
+}
+
+.course-block > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Recruiters Section Styles */
+#OUR_RECRUITERS {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#OUR_RECRUITERS h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.recruiters-slider {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slider-track {
+    display: flex;
+    animation: slide 20s linear infinite;
+}
+
+.recruiter-logo {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 100px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recruiter-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.recruiter-logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.recruiters-slider:hover .slider-track {
+    animation-play-state: paused;
+}
+
+/* Approval/Affiliation Fix */
+.approval-section, 
+.affiliation-section {
+    display: block;
+    width: 100%;
+    clear: both;
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sticker-container {
+        position: static;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .sticker {
+        position: static;
+        transform: rotate(0);
+    }
+
+    #info-sections {
+        flex-direction: column;
+    }
+}
+
+/* Animations */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* for chatboat */  
+.chat {
+    position: fixed;
+    bottom: 20px; /* Adjusted for better positioning */
+    right: 20px; /* Adjusted for better positioning */
+    width: 320px; /* Match the width of institute-chat-container in indexchat.html */
+    height: 480px; /* Adjust to fit the chat container's height */
+    z-index: 1001; /* Ensure it appears above other elements */
+}
+
+iframe#chatbot {
+    width: 100%;
+    height: 100%; /* Use the parent (.chat) dimensions */
+    border: none;
+    border-radius: 10px; /* Match the border-radius of institute-chat-container */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); Match the shadow of institute-chat-container */
+}
